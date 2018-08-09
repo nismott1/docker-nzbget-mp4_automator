@@ -4,20 +4,19 @@ MAINTAINER Migz93
 VOLUME /scripts
 VOLUME /sickbeard_mp4_automator
 
-# Install Git
-RUN apk add --no-cache git
-
-# Install MP4 Automator
-RUN git clone https://github.com/mdhiggins/sickbeard_mp4_automator.git /scripts/MP4_Automator
-RUN apk add --no-cache \
-  py-setuptools \
-  py-pip \
+RUN \
+  apt-get update && \
+  apt-get install -y \
+  ffmpeg \
+  git \
+  python-pip \
+  openssl \
   python-dev \
   libffi-dev \
-  gcc \
-  musl-dev \
-  openssl-dev \
-  ffmpeg
+  libssl-dev \
+  libxml2-dev \
+  libxslt1-dev \
+zlib1g-dev
 
 RUN \
   pip install --upgrade pip && \
@@ -33,8 +32,8 @@ RUN \
   pip install qtfaststart && \
   touch /sickbeard_mp4_automator/info.log && \
   chmod a+rwx -R /sickbeard_mp4_automator && \
-  ln -s /downloads /data && \
-  ln -s /sickbeard_mp4_automator/autoProcess.ini /sickbeard_mp4_automator/autoProcess.ini
+  git clone git://github.com/mdhiggins/sickbeard_mp4_automator.git /scripts/sickbeard_mp4_automator/ && \
+  ln -s /sickbeard_mp4_automator/autoProcess.ini /scripts/sickbeard_mp4_automator/autoProcess.ini
 
 #Set MP4_Automator script settings in NZBGet settings
 RUN echo 'NZBGetPostProcess.py:MP4_FOLDER=/scripts/MP4_Automator' >> /config/nzbget.conf
