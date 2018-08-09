@@ -37,8 +37,4 @@ RUN echo 'NZBGetPostProcess.py:SHOULDCONVERT=True' >> /config/nzbget.conf
 #Set script file permissions
 RUN chmod 775 -R /scripts
 
-#Set script directory setting in NZBGet
-#RUN /app/nzbget -o ScriptDir=/app/scripts,${MP4Automator_dir}
-ONBUILD RUN sed -i 's/^ScriptDir=.*/ScriptDir=\/app\/scripts;\/scripts\/MP4_Automator' /config/nzbget.conf
-
 ln -s /sickbeard_mp4_automator/autoProcess.ini /scripts/sickbeard_mp4_automator/autoProcess.ini
