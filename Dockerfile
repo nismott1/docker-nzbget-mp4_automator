@@ -2,7 +2,7 @@ FROM linuxserver/nzbget
 MAINTAINER Migz93
 
 VOLUME /scripts
-VOLUME /config_mp4_automator
+VOLUME /sickbeard_mp4_automator
 
 # Install Git
 RUN apk add --no-cache git
@@ -41,4 +41,4 @@ RUN chmod 775 -R /scripts
 #RUN /app/nzbget -o ScriptDir=/app/scripts,${MP4Automator_dir}
 ONBUILD RUN sed -i 's/^ScriptDir=.*/ScriptDir=\/app\/scripts;\/scripts\/MP4_Automator' /config/nzbget.conf
 
-ln -s /config_mp4_automator/autoProcess.ini /scripts/sickbeard_mp4_automator/autoProcess.ini
+ln -s /sickbeard_mp4_automator/autoProcess.ini /scripts/sickbeard_mp4_automator/autoProcess.ini
