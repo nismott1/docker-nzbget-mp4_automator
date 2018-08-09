@@ -9,6 +9,7 @@ RUN apk add --no-cache git
 
 # Install MP4 Automator
 RUN git clone https://github.com/mdhiggins/sickbeard_mp4_automator.git /scripts/sickbeard_mp4_automator
+RUN ln -sf /sickbeard_mp4_automator/autoProcess.ini /scripts/sickbeard_mp4_automator/autoProcess.ini
 RUN apk add --no-cache \
   py-setuptools \
   py-pip \
