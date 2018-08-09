@@ -34,7 +34,7 @@ RUN \
   touch /sickbeard_mp4_automator/info.log && \
   chmod a+rwx -R /sickbeard_mp4_automator && \
   ln -s /downloads /data && \
-ln -s /sickbeard_mp4_automator/autoProcess.ini /sickbeard_mp4_automator/autoProcess.ini \
+  ln -s /sickbeard_mp4_automator/autoProcess.ini /sickbeard_mp4_automator/autoProcess.ini
 
 #Set MP4_Automator script settings in NZBGet settings
 RUN echo 'NZBGetPostProcess.py:MP4_FOLDER=/scripts/MP4_Automator' >> /config/nzbget.conf
