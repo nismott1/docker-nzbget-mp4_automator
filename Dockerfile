@@ -4,6 +4,9 @@ MAINTAINER Migz93
 # Install Git
 RUN apk add --no-cache git
 
+# Install mkvtoolnix
+RUN apk add --no-cache mkvtoolnix
+
 # Install MP4 Automator
 RUN apk add --no-cache \
   py-setuptools \
