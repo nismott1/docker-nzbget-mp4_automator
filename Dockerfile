@@ -7,6 +7,9 @@ RUN apk add --no-cache git
 # Install mkvtoolnix
 RUN apk add --no-cache mkvtoolnix
 
+# Install mediainfo
+RUN apk add --no-cache mediainfo
+
 # Install MP4 Automator
 RUN apk add --no-cache \
   py-setuptools \
