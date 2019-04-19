@@ -1,4 +1,4 @@
-FROM hotio/sabnzbd
+FROM linuxserver/sabnzbd
 MAINTAINER Nismott1
 
 # Install Git
