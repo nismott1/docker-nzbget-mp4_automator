@@ -1,4 +1,4 @@
-FROM linuxserver/nzbget
+FROM linuxserver/sabnzbd
 
 # Install Git
 RUN apk add --no-cache git
