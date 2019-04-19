@@ -1,5 +1,5 @@
-FROM linuxserver/nzbget
-MAINTAINER Migz93
+FROM hotio/sabnzbd
+MAINTAINER Nismott1
 
 # Install Git
 RUN apk add --no-cache git
