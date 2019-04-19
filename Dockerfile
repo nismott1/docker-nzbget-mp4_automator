@@ -1,5 +1,4 @@
-FROM hotio/sabnzbd
-MAINTAINER Nismott1
+FROM linuxserver/nzbget
 
 # Install Git
 RUN apk add --no-cache git
